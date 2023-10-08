@@ -1,3 +1,4 @@
+// Also don't know what this is, but VsCode wants it
 package Java_Calculator_Aplication;
 
 // Awt stuff
@@ -48,9 +49,6 @@ public class Main extends JFrame
 
         // Give it a background color of grey, but dark
         this.getContentPane().setBackground(Color.darkGray);
-
-        // Let it be seen
-        this.setVisible(true);
 
         // ------------------- Panels ---------------------- \\
 
@@ -189,6 +187,9 @@ public class Main extends JFrame
         keypadBottom.add(eight, BorderLayout.CENTER);
         keypadBottom.add(nine, BorderLayout.EAST);
 
+
+        // ----------------------- Let Everything Be Seen -------------------------- \\
+        this.setVisible(true);
     }
 
     public static void main(String[] args)
