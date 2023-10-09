@@ -38,6 +38,18 @@ public class Main extends JFrame
     static JButton devide;
     static JButton moduli;
     static JButton power;
+    static JButton openParenthese;
+    static JButton closeParenthese;
+    static JButton squareRoot;
+    static JButton cubeRoot;
+    static JButton cos;
+    static JButton sin;
+    static JButton tan;
+    static JButton pi;
+
+
+    // Text bars
+    static JTextField overHeadBar;
 
     // Still don't know
     Main()
@@ -185,6 +197,14 @@ public class Main extends JFrame
         devide = new JButton("/");
         moduli = new JButton("%");
         power = new JButton("^");
+        openParenthese = new JButton("(");
+        closeParenthese = new JButton(")");
+        squareRoot = new JButton("√");
+        cubeRoot = new JButton("∛");
+        cos = new JButton("cos");
+        sin = new JButton("sin");
+        tan = new JButton("tan");
+        pi = new JButton("π");
 
 
 
@@ -213,7 +233,25 @@ public class Main extends JFrame
         opperationPanel.add(devide);
         opperationPanel.add(moduli);
         opperationPanel.add(power);
+        opperationPanel.add(openParenthese);
+        opperationPanel.add(closeParenthese);
+        opperationPanel.add(squareRoot);
+        opperationPanel.add(cubeRoot);
+        opperationPanel.add(cos);
+        opperationPanel.add(sin);
+        opperationPanel.add(tan);
+        opperationPanel.add(pi);
 
+        // ---------------- Text Panels ----------------- \\
+
+        // Make a text feild
+        overHeadBar = new JTextField("Equation: ");
+
+        // Set the bounds
+        overHeadBar.setPreferredSize(new Dimension(100, 100));
+        
+        // Add to panel
+        textBar.add(overHeadBar, BorderLayout.WEST);
 
         // ----------------------- Let Everything Be Seen -------------------------- \\
         this.setVisible(true);
