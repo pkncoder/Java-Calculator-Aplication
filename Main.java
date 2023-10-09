@@ -16,7 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-public class Main extends JFrame
+public class Main extends JFrame implements ActionListener
 {
     // Add instances of these variables that the action listener will use
     // Buttons
@@ -123,7 +123,7 @@ public class Main extends JFrame
         opperationPanel.setLayout(new BoxLayout(opperationPanel, BoxLayout.PAGE_AXIS));
 
         // Text bar
-        textBar.setLayout(null);
+        textBar.setLayout(new BorderLayout());
 
 
 
@@ -238,10 +238,17 @@ public class Main extends JFrame
         overHeadBar.setPreferredSize(new Dimension(100, 100));
         
         // Add to panel
-        textBar.add(overHeadBar, BorderLayout.WEST);
+        textBar.add(overHeadBar, BorderLayout.CENTER);
 
         // ----------------------- Let Everything Be Seen -------------------------- \\
         this.setVisible(true);
+    }
+
+    // Add the action listener
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        
     }
 
     public static void main(String[] args)
