@@ -51,6 +51,7 @@ public class Main extends JFrame implements ActionListener
 
     // Text bars
     static JTextField overHeadBar;
+    static String overHeadBartext = "";
 
     // Still don't know
     Main()
@@ -94,18 +95,16 @@ public class Main extends JFrame implements ActionListener
         // Create perfered sizes
         // Keypads
         keypadHolder.setPreferredSize(new Dimension(100, 50));
-        keypadHolder.setPreferredSize(new Dimension(100, 50));
-        keypadHolder.setPreferredSize(new Dimension(100, 50));
 
         // Text bars
-        textBar.setPreferredSize(new Dimension(100, 50));
+        textBar.setPreferredSize(new Dimension(80, 80));
 
         // Opperation panel
-        opperationPanel.setPreferredSize(new Dimension(50, 100));
+        opperationPanel.setPreferredSize(new Dimension(80, 80));
 
         // Extras bars
-        extrasBarBottom.setPreferredSize(new Dimension(100, 50));
-        extrasBarLeft.setPreferredSize(new Dimension(50, 100));
+        extrasBarBottom.setPreferredSize(new Dimension(80, 80));
+        extrasBarLeft.setPreferredSize(new Dimension(80, 80));
 
 
 
@@ -279,7 +278,59 @@ public class Main extends JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        
+        if (e.getSource() == one)
+        {
+            overHeadBartext += "1";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == two)
+        {
+            overHeadBartext += "2";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == three)
+        {
+            overHeadBartext += "3";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == four)
+        {
+            overHeadBartext += "4";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == five)
+        {
+            overHeadBartext += "5";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == six)
+        {
+            overHeadBartext += "6";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == seven)
+        {
+            overHeadBartext += "7";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == eight)
+        {
+            overHeadBartext += "8";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
+
+        else if (e.getSource() == nine)
+        {
+            overHeadBartext += "9";
+            overHeadBar.setText("Equation: " + overHeadBartext);
+        }
     }
 
     public static void main(String[] args)
