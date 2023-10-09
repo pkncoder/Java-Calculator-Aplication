@@ -2,6 +2,7 @@
 package Java_Calculator_Aplication;
 
 // Awt stuff
+import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -75,11 +76,6 @@ public class Main extends JFrame
         // ------------------- Panels ---------------------- \\
 
         // Create all the panels
-        // Keypad pannels
-        JPanel keypadTop = new JPanel();
-        JPanel keypadMiddle = new JPanel();
-        JPanel keypadBottom = new JPanel();
-
         // Keypad holder
         JPanel keypadHolder = new JPanel();
 
@@ -97,9 +93,9 @@ public class Main extends JFrame
 
         // Create perfered sizes
         // Keypads
-        keypadTop.setPreferredSize(new Dimension(100, 50));
-        keypadMiddle.setPreferredSize(new Dimension(100, 50));
-        keypadBottom.setPreferredSize(new Dimension(100, 50));
+        keypadHolder.setPreferredSize(new Dimension(100, 50));
+        keypadHolder.setPreferredSize(new Dimension(100, 50));
+        keypadHolder.setPreferredSize(new Dimension(100, 50));
 
         // Text bars
         textBar.setPreferredSize(new Dimension(100, 50));
@@ -115,13 +111,9 @@ public class Main extends JFrame
 
 
         // Add the border layouts to everything
-        // Keypads
-        keypadTop.setLayout(new BorderLayout());
-        keypadMiddle.setLayout(new BorderLayout());
-        keypadBottom.setLayout(new BorderLayout());
-
+        
         // Keypad holder
-        keypadHolder.setLayout(new BorderLayout());
+        keypadHolder.setLayout(new GridLayout(3, 3));
 
         // Extras Bars
         extrasBarBottom.setLayout(null);
@@ -137,9 +129,9 @@ public class Main extends JFrame
 
         // Create any colors needed
         // Keypads
-        keypadTop.setBackground(new Color(0, 0, 0, 0));
-        keypadMiddle.setBackground(new Color(0, 0, 0, 0));
-        keypadBottom.setBackground(new Color(0, 0, 0, 0));
+        keypadHolder.setBackground(new Color(0, 0, 0, 0));
+        keypadHolder.setBackground(new Color(0, 0, 0, 0));
+        keypadHolder.setBackground(new Color(0, 0, 0, 0));
 
         // Keypad holder
         keypadHolder.setBackground(new Color(0, 0, 0, 0));
@@ -159,11 +151,6 @@ public class Main extends JFrame
         // Add the panels to the frame, or other pannels
         // Keypad holder
         this.add(keypadHolder, BorderLayout.CENTER);
-
-        // Keypads
-        keypadHolder.add(keypadTop, BorderLayout.NORTH);
-        keypadHolder.add(keypadMiddle, BorderLayout.CENTER);
-        keypadHolder.add(keypadBottom, BorderLayout.SOUTH);
 
         // Opperation panel
         this.add(opperationPanel, BorderLayout.EAST);
@@ -211,19 +198,19 @@ public class Main extends JFrame
         // Add the buttons to the panels
         // Keypad
         // Top
-        keypadTop.add(one, BorderLayout.WEST);
-        keypadTop.add(two, BorderLayout.CENTER);
-        keypadTop.add(three, BorderLayout.EAST);
+        keypadHolder.add(one);
+        keypadHolder.add(two);
+        keypadHolder.add(three);
 
         // Middle
-        keypadMiddle.add(four, BorderLayout.WEST);
-        keypadMiddle.add(five, BorderLayout.CENTER);
-        keypadMiddle.add(six, BorderLayout.EAST);
+        keypadHolder.add(four);
+        keypadHolder.add(five);
+        keypadHolder.add(six);
 
         // Bottom
-        keypadBottom.add(seven, BorderLayout.WEST);
-        keypadBottom.add(eight, BorderLayout.CENTER);
-        keypadBottom.add(nine, BorderLayout.EAST);
+        keypadHolder.add(seven);
+        keypadHolder.add(eight);
+        keypadHolder.add(nine);
 
 
         // Opperation panel
