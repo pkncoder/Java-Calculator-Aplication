@@ -229,6 +229,37 @@ public class Main extends JFrame implements ActionListener
         opperationPanel.add(tan);
         opperationPanel.add(pi);
 
+
+
+        // Action listeners
+        // Numbers
+        one.addActionListener(this);
+        two.addActionListener(this);
+        three.addActionListener(this);
+        four.addActionListener(this);
+        five.addActionListener(this);
+        six.addActionListener(this);
+        seven.addActionListener(this);
+        eight.addActionListener(this);
+        nine.addActionListener(this);
+
+        
+        // Opperations
+        add.addActionListener(this);
+        minus.addActionListener(this);
+        multiply.addActionListener(this);
+        devide.addActionListener(this);
+        moduli.addActionListener(this);
+        power.addActionListener(this);
+        openParenthese.addActionListener(this);
+        closeParenthese.addActionListener(this);
+        squareRoot.addActionListener(this);
+        cubeRoot.addActionListener(this);
+        cos.addActionListener(this);
+        sin.addActionListener(this);
+        tan.addActionListener(this);
+        pi.addActionListener(this);
+
         // ---------------- Text Panels ----------------- \\
 
         // Make a text feild
