@@ -10,14 +10,16 @@ import java.awt.event.ActionListener;
 
 // Java swing stuff
 import javax.swing.JPanel;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class Main extends JFrame
 {
     // Add instances of these variables that the action listener will use
+    // Buttons
+    // Numbers
     static JButton one;
     static JButton two;
     static JButton three;
@@ -28,6 +30,14 @@ public class Main extends JFrame
     static JButton eight;
     static JButton nine;
     static JButton zero;
+
+    // Opperations
+    static JButton add;
+    static JButton minus;
+    static JButton multiply;
+    static JButton devide;
+    static JButton moduli;
+    static JButton power;
 
     // Still don't know
     Main()
@@ -45,7 +55,7 @@ public class Main extends JFrame
         this.setLayout(new BorderLayout());
 
         // Give the app a normal size
-        this.setSize(500, 500);
+        this.setSize(350, 300);
 
         // Give it a background color of grey, but dark
         this.getContentPane().setBackground(Color.darkGray);
@@ -106,7 +116,7 @@ public class Main extends JFrame
         extrasBarLeft.setLayout(null);
 
         // Operation panel
-        opperationPanel.setLayout(null);
+        opperationPanel.setLayout(new BoxLayout(opperationPanel, BoxLayout.PAGE_AXIS));
 
         // Text bar
         textBar.setLayout(null);
@@ -168,6 +178,14 @@ public class Main extends JFrame
         nine = new JButton("9");
         zero = new JButton("0");
 
+        // Opperations
+        add = new JButton("+");
+        minus = new JButton("-");
+        multiply = new JButton("*");
+        devide = new JButton("/");
+        moduli = new JButton("%");
+        power = new JButton("^");
+
 
 
         // Add the buttons to the panels
@@ -186,6 +204,15 @@ public class Main extends JFrame
         keypadBottom.add(seven, BorderLayout.WEST);
         keypadBottom.add(eight, BorderLayout.CENTER);
         keypadBottom.add(nine, BorderLayout.EAST);
+
+
+        // Opperation panel
+        opperationPanel.add(add);
+        opperationPanel.add(minus);
+        opperationPanel.add(multiply);
+        opperationPanel.add(devide);
+        opperationPanel.add(moduli);
+        opperationPanel.add(power);
 
 
         // ----------------------- Let Everything Be Seen -------------------------- \\
