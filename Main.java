@@ -16,6 +16,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+// Do ArrayList
+import java.util.ArrayList;
+
 public class Main extends JFrame implements ActionListener
 {
     // Add instances of these variables that the action listener will use
@@ -52,6 +55,15 @@ public class Main extends JFrame implements ActionListener
     // Text bars
     static JTextField overHeadBar;
     static String overHeadBartext = "";
+
+    // Make a button arraylist so we can mach up data for action listener
+    static ArrayList<JButton> buttons = new ArrayList<JButton>();
+
+    // Make a normal array for all of the print out-buttons so we can simply grab some strings
+    static String[] buttonsActions = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", "%", "^", "(", ")", "√", "∛", "cos(", "sin(", "tan(", "π"};
+
+    
+
 
     // Still don't know
     Main()
@@ -259,6 +271,37 @@ public class Main extends JFrame implements ActionListener
         tan.addActionListener(this);
         pi.addActionListener(this);
 
+
+
+        // Add the buttons to the Button array list
+        // Numbers
+        buttons.add(one);
+        buttons.add(two);
+        buttons.add(three);
+        buttons.add(four);
+        buttons.add(five);
+        buttons.add(six);
+        buttons.add(seven);
+        buttons.add(eight);
+        buttons.add(nine);
+
+        // Opporations
+        buttons.add(add);
+        buttons.add(minus);
+        buttons.add(multiply);
+        buttons.add(devide);
+        buttons.add(moduli);
+        buttons.add(power);
+        buttons.add(openParenthese);
+        buttons.add(closeParenthese);
+        buttons.add(squareRoot);
+        buttons.add(cubeRoot);
+        buttons.add(cos);
+        buttons.add(sin);
+        buttons.add(tan);
+        buttons.add(pi);
+
+
         // ---------------- Text Panels ----------------- \\
 
         // Make a text feild
@@ -278,58 +321,20 @@ public class Main extends JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        if (e.getSource() == one)
-        {
-            overHeadBartext += "1";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
 
-        else if (e.getSource() == two)
+        // Loop through an array to play the matching game
+        for (int k = 0; k < buttonsActions.length; k++)
         {
-            overHeadBartext += "2";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
+            if (e.getSource() == buttons.get(k))
+            {
+                // Print it out to the over head bar
+                overHeadBartext += buttonsActions[k];
+                overHeadBar.setText("Equation: " + overHeadBartext);
 
-        else if (e.getSource() == three)
-        {
-            overHeadBartext += "3";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
-
-        else if (e.getSource() == four)
-        {
-            overHeadBartext += "4";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
-
-        else if (e.getSource() == five)
-        {
-            overHeadBartext += "5";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
-
-        else if (e.getSource() == six)
-        {
-            overHeadBartext += "6";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
-
-        else if (e.getSource() == seven)
-        {
-            overHeadBartext += "7";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
-
-        else if (e.getSource() == eight)
-        {
-            overHeadBartext += "8";
-            overHeadBar.setText("Equation: " + overHeadBartext);
-        }
-
-        else if (e.getSource() == nine)
-        {
-            overHeadBartext += "9";
-            overHeadBar.setText("Equation: " + overHeadBartext);
+                // Break the loop so it stops
+                break;
+                
+            }
         }
     }
 
