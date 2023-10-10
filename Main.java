@@ -51,6 +51,9 @@ public class Main extends JFrame implements ActionListener
     static JButton tan;
     static JButton pi;
 
+    // Extra buttons
+    static JButton clear;
+
 
     // Text bars
     static JTextField overHeadBar;
@@ -62,7 +65,12 @@ public class Main extends JFrame implements ActionListener
     // Make a normal array for all of the print out-buttons so we can simply grab some strings
     static String[] buttonsActions = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "%", "^", "(", ")", "√", "∛", "cos(", "sin(", "tan(", "π"};
 
-    
+
+    // Make another arraylist so we can do the diferent commands for the extras buttons
+    static ArrayList<JButton> extraActionsList = new ArrayList<JButton>();
+
+    // Then hook up the actions
+    static String[] extraActionsKeyCommands = {"/clearOverHeadBar"};
 
 
     // Still don't know
@@ -204,6 +212,9 @@ public class Main extends JFrame implements ActionListener
         tan = new JButton("tan");
         pi = new JButton("π");
 
+        // Extra buttons
+        clear = new JButton("clear");
+
 
 
         // Add the buttons to the panels
@@ -245,6 +256,10 @@ public class Main extends JFrame implements ActionListener
         extrasBarBottom.add(zero, BorderLayout.CENTER);
 
 
+        // Extra buttons
+        extrasBarBottom.add(clear, BorderLayout.WEST);
+
+
 
         // Action listeners
         // Numbers
@@ -275,6 +290,10 @@ public class Main extends JFrame implements ActionListener
         sin.addActionListener(this);
         tan.addActionListener(this);
         pi.addActionListener(this);
+
+
+        // Extra buttons
+        clear.addActionListener(this);
 
 
 
@@ -308,6 +327,10 @@ public class Main extends JFrame implements ActionListener
         buttons.add(pi);
 
 
+        // Add the extras buttons to the extra button array list
+        extraActionsList.add(clear);
+
+
         // ---------------- Text Panels ----------------- \\
 
         // Make a text feild
@@ -339,7 +362,17 @@ public class Main extends JFrame implements ActionListener
 
                 // Break the loop so it stops
                 break;
-                
+            }
+        }
+
+        // Loop through an array for the extra commands
+        for (int k = 0; k < extraActionsKeyCommands.length; k++)
+        {
+            // Test to see if it is indeed one of these
+            if (e.getSource() == extraActionsList.get(k))
+            {
+                // Break at the end to stop the loop
+                break;
             }
         }
     }
