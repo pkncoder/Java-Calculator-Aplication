@@ -60,7 +60,7 @@ public class Main extends JFrame implements ActionListener
     static ArrayList<JButton> buttons = new ArrayList<JButton>();
 
     // Make a normal array for all of the print out-buttons so we can simply grab some strings
-    static String[] buttonsActions = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", "%", "^", "(", ")", "√", "∛", "cos(", "sin(", "tan(", "π"};
+    static String[] buttonsActions = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "%", "^", "(", ")", "√", "∛", "cos(", "sin(", "tan(", "π"};
 
     
 
@@ -127,7 +127,7 @@ public class Main extends JFrame implements ActionListener
         keypadHolder.setLayout(new GridLayout(3, 3));
 
         // Extras Bars
-        extrasBarBottom.setLayout(null);
+        extrasBarBottom.setLayout(new BorderLayout());
         extrasBarLeft.setLayout(null);
 
         // Operation panel
@@ -241,6 +241,10 @@ public class Main extends JFrame implements ActionListener
         opperationPanel.add(pi);
 
 
+        // Seperate 0 Spot
+        extrasBarBottom.add(zero, BorderLayout.CENTER);
+
+
 
         // Action listeners
         // Numbers
@@ -253,6 +257,7 @@ public class Main extends JFrame implements ActionListener
         seven.addActionListener(this);
         eight.addActionListener(this);
         nine.addActionListener(this);
+        zero.addActionListener(this);
 
         
         // Opperations
@@ -284,6 +289,7 @@ public class Main extends JFrame implements ActionListener
         buttons.add(seven);
         buttons.add(eight);
         buttons.add(nine);
+        buttons.add(zero);
 
         // Opporations
         buttons.add(add);
