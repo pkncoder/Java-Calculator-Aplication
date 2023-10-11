@@ -371,6 +371,11 @@ public class Main extends JFrame implements ActionListener
             // Test to see if it is indeed one of these
             if (e.getSource() == extraActionsList.get(k))
             {
+                if (extraActionsKeyCommands[k] == "/clearOverHeadBar")
+                {
+                    overHeadBartext = "";
+                    overHeadBar.setText("Equation: " + overHeadBartext);
+                }
                 // Break at the end to stop the loop
                 break;
             }
